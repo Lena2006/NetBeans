@@ -31,7 +31,7 @@ public class Boiler0 {
         System.out.println("Returning instance...");
         return uniqueInstance;
      }
-
+//lijljl
 //    public Boiler0() {
 //        empty = true;
 //        boiled = false;
