@@ -33,6 +33,7 @@ static Object key = new Object();
     }
         System.out.println(".....done......");
     }
+//    ...
     public static void main(String[] args) {
         new Thread(() -> {
             System.out.println("Vasya: ");
