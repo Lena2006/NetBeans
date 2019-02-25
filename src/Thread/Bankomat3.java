@@ -13,27 +13,29 @@ import java.util.logging.Logger;
  * @author User
  */
 public class Bankomat3 {
+
     static int money = 100;
-static Object key = new Object();
+    static Object key = new Object();
 
     static void getMoney(int amount) {
-         synchronized(key){
-        if (amount <= money) {
+        synchronized (key) {
+            if (amount <= money) {
 
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Bankomat2.class.getName()).log(Level.SEVERE, null, ex);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Bankomat2.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                money -= amount;
+                System.out.println("Congrat! new amount: " + money);
+            } else {
+                System.err.println("Not enough money");
             }
-            money -= amount;
-            System.out.println("Congrat! new amount: " + money);
-        } else {
-            System.err.println("Not enough money");
         }
-    }
         System.out.println(".....done......");
     }
 //    ...
+
     public static void main(String[] args) {
         new Thread(() -> {
             System.out.println("Vasya: ");
@@ -53,5 +55,3 @@ static Object key = new Object();
         }).start();
     }
 }
- 
-
